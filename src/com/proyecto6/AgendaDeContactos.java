@@ -69,5 +69,60 @@ public class AgendaDeContactos {
         }
     }
 
+    public static void actualizarContacto() {
+        System.out.println("Ingrese el ID del contacto que desea actualizar");
+        int id = input.nextInt();
+        input.nextLine();
+
+        if (listaContactos.containsKey(id)){
+            Contacto contacto = listaContactos.get(id);
+            System.out.println("Que desea actualizar del contacto con el ID: " +id);
+            System.out.println("1. Nombre");
+            System.out.println("2. Apellido");
+            System.out.println("3. Edad");
+            System.out.println("4. Numero De Telefono");
+            System.out.println("5. E-mail");
+            int opcion = input.nextInt();
+            input.nextLine();
+
+            if (opcion == 1) {
+                System.out.println("Actualice el nombre");
+                String nombre = input.nextLine();
+                contacto.setNombre(nombre);
+                System.out.println("El nombre ha sido actualizado.");
+            }
+            if (opcion == 2) {
+                System.out.println("Actualice el apellido");
+                String apellido = input.nextLine();
+                contacto.setApellido(apellido);
+                System.out.println("El apellido ha sido actualizado.");
+            }
+            if (opcion == 3) {
+                System.out.println("Actualice la edad");
+                int edad = input.nextInt();
+                input.nextLine();
+                contacto.setEdad(edad);
+                System.out.println("La edad ha sido actualizado.");
+            }
+            if (opcion == 4) {
+                System.out.println("Actualice el numero de telefono");
+                int numeroTelefono = input.nextInt();
+                input.nextLine();
+                contacto.setNumeroTelefono(numeroTelefono);
+                System.out.println("EL numero de telefono ha sido actualizado.");
+            }
+            if (opcion == 5){
+                System.out.println("Actualice el e-mail");
+                String email = input.nextLine();
+                contacto.setEmail(email);
+                System.out.println("El email ha sido actualizado.");
+            }
+
+        } else {
+            System.out.println("No existe ningun contacto con ese ID.");
+        }
+
+    }
+
 
 }
